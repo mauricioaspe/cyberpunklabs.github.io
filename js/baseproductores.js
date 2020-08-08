@@ -26,7 +26,7 @@ var osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 		osm = L.tileLayer(osmUrl, {maxZoom: 50, attribution: osmAttrib});
 var map = L.map('map').setView([-35.0338593, -73.1401901], 5).addLayer(osm);
 
-
+map.locate({setView: true, maxZoom: 16});
 
 ///////////////////////////////////
 // Comienzo de la base de datos //

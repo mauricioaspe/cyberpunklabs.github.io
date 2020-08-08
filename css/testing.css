@@ -1,5 +1,9 @@
 /* @charset "UTF-8"; */
 
+html, body, #map {
+    height: 100%;
+    width: 100vw;
+}
 
 /* BODY */
 body {
@@ -9,6 +13,22 @@ body {
     font-family: monospace;
 }
 
+
+.productores {
+  padding: 0em 0 5em 0;
+  background-color: rgb(0,0,0);
+  background-image: url('/home/diogenes/projects/cyberpunklabs.github.io/images/banner2.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+  /* opacity: 0.5; */
+}
+
+
+/* #map-id { height: 450px; }*/
 
 /* CODIGO PARA LA PAGINA PRINCIPAL */
 /* TOP MENU */ 
@@ -34,7 +54,7 @@ body {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px;
   text-decoration: none;
 }
 
@@ -186,9 +206,9 @@ body {
 
 /* FOOTER */
 .main-footer {
-    padding: 1em 0 2em 0;
-    background-color: rgb(0,0,0);
-    color: green;
+  padding: 1em 0 2em 0;
+  background-color: #333;
+  color: #6cc091 !important;
 }
 
 .main-footer li {
@@ -200,6 +220,9 @@ body {
 }
 
 
+
+/* PARA PAGINA PRODUCTORES */
+#mapid { height: 180px; }
 
 
 /*
