@@ -16,17 +16,10 @@
 <!--    Body    -->
 <body>
 
-<!-- 
-  Para radio:
-  src=<?php echo 'EJR/'.$files[rand(2,$nfiles)] ?>
-	 
-  Para transmitir especiales
-  src="especiales/emision1.mp3">
--->
 
 <figure id="mainPlayer" class="mainPlayer">
   <?php
-    $mypath = '/var/www/html/EJR/';
+    $mypath = '/home/diogenes/projects/cyberpunklabs.github.io/EJR/';
     $files  = scandir($mypath);
     $nfiles = count($files) - 2;
     $file   = $files[rand(2,$nfiles)];
