@@ -68,9 +68,9 @@ function onLocationFound(e) {
     var radius = e.accuracy;
 
     L.marker(e.latlng).addTo(map)
-        .bindPopup("AGORA: Este es tu radio de " + radius + " metros").openPopup();
+        .bindPopup("AGORA: Estás aquí").openPopup();
 
-    L.circle(e.latlng, radius).addTo(map);
+    // L.circle(e.latlng, radius).addTo(map);
 }
 
 map.on('locationfound', onLocationFound);
