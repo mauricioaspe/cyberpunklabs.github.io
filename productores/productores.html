@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-	
+<head>	
   <title>El Ágora</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../leaflet/leaflet.css" /> 
   <script src="../leaflet/leaflet.js"></script>
-
-
 </head>
 <body>
 
@@ -36,24 +33,20 @@ var lechugaIcon = L.icon({
 var cities1 = L.layerGroup();
 var cities2 = L.layerGroup();
 
-
 L.marker([-32.4532208, -71.2499938], {icon: lechugaIcon}).bindPopup('This is Littleton, CO.').addTo(cities1),
 L.marker([-32.6862063496, -71.1743242574], {icon: lechugaIcon}).bindPopup('This is Denver, CO.').addTo(cities1),
 L.marker([-32.8453072827, -70.9709288784], {icon: cruzIcon}).bindPopup('This is Aurora, CO.').addTo(cities2),
 L.marker([-33.2846366, -71.5862724], {icon: cruzIcon}).bindPopup('This is Golden, CO.').addTo(cities2);
-
 
 var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
 '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
 
-
-
 var streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
 
 var map = L.map('map', {
-center: [-35.0338593, -73.1401901],
+center: [-35.03, -70.75],
 zoom: 6,
 layers: [streets, cities1, cities2]
 });
@@ -69,15 +62,15 @@ var overlays = {
 
 L.control.layers(baseLayers, overlays).addTo(map);
 
-map.locate({setView: true, maxZoom: 20});
+map.locate({setView: true, maxZoom: 10});
 
 function onLocationFound(e) {
     var radius = e.accuracy;
 
     L.marker(e.latlng).addTo(map)
-        .bindPopup("AGORA: Este es tu radio de " + radius + " metros").openPopup();
+        .bindPopup("AGORA: Estás aquí").openPopup();
 
-    L.circle(e.latlng, radius).addTo(map);
+    // L.circle(e.latlng, radius).addTo(map);
 }
 
 map.on('locationfound', onLocationFound);
