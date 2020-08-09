@@ -14,22 +14,6 @@ body {
 }
 
 
-.productores {
-  padding: 0em 0 5em 0;
-  background-color: rgb(0,0,0);
-  background-image: url('/home/diogenes/projects/cyberpunklabs.github.io/images/banner2.jpg');
-  background-size: cover;
-  background-position: bottom;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  text-align: center;
-  position: relative;
-  /* opacity: 0.5; */
-}
-
-
-/* #map-id { height: 450px; }*/
-
 /* CODIGO PARA LA PAGINA PRINCIPAL */
 /* TOP MENU */ 
 .top-menu {
@@ -71,14 +55,14 @@ body {
 
 /* BANNER */
 .hero-image {
-  background-image: url('https://raw.githubusercontent.com/CyberPunkLabs/cyberpunklabs.github.io/master/images/banner2.jpg');
+  background-image: url('/home/diogenes/projects/cyberpunklabs.github.io/images/banner2.jpg');
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   padding: 0em 0em 5em 0em;
-  margin: 3em 0em 0em 0em;
+  margin: 4em 0em 0em 0em;
 }
 
 .hero-text {
@@ -147,16 +131,13 @@ body {
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  /* position: -webkit-sticky; */
-  /* position: sticky; */
   top: 0;
-  width: 100%;
 }
 
 /* media-menu lists */
 .media-menu li {
   float: left;
-  width: 33.33333%;
+  width: 33.33%;
 }
 
 /* media-menu links */
@@ -176,13 +157,8 @@ body {
 
 /* MAIN SECTION */
 .main-section {
-    /*background-image: url(../../images/matrix.gif); */
-    /*background-size: cover;*/
-    /*font-family: 'Orbitron', courier, sans-serif;*/
-    /*font-size: 17px;*/
-    /*background-color: rgb(250,250,250);*/
     padding: 1em 1em 1em 1em;
-    width: 70%;
+    width: 66%;
 }
 
 
@@ -208,8 +184,9 @@ body {
 /* FOOTER */
 .main-footer {
   padding: 1em 0 2em 0;
-  background-color: #333;
-  color: #6cc091 !important;
+  background-color: rgb(20,20,20);
+  color: white;
+  width: 100%;
 }
 
 .main-footer li {
@@ -222,8 +199,6 @@ body {
 
 
 
-/* PARA PAGINA PRODUCTORES 
-#mapid { height: 180px; } */
 
 
 /*
