@@ -15,7 +15,75 @@ body {
 
 
 /* CODIGO PARA LA PAGINA PRINCIPAL */
-/* TOP MENU */ 
+
+
+.navbar {
+  /* list-style-type: none; */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: red;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+
+
+/* TOP MENU  
 .top-menu {
   list-style-type: none;
   margin: 0;
@@ -26,14 +94,16 @@ body {
   top: 0;
   width: 100%;
 }
+*/
 
-/* top-menu lists */
+/* top-menu lists 
 .top-menu li {
   float: right;
   width: 25%;
 }
+*/
 
-/* top-menu links */
+/* top-menu links 
 .top-menu li a {
   display: block;
   color: white;
@@ -41,16 +111,19 @@ body {
   padding: 14px;
   text-decoration: none;
 }
+*/
 
-/* top-menu links colors */
+/* top-menu links colors 
 .top-menu li a:hover:not(.active) {
   background-color: #111;
 }
+*/
 
-/* top-menu active link */
+/* top-menu active link 
 .top-menu .active {
   background-color: #4CAF50;
 }
+*/
 
 
 /* BANNER */
