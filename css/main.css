@@ -71,6 +71,7 @@ body {
 
 /* BANNER */
 .hero-image {
+  background-color: black;
   background-image: url('https://raw.githubusercontent.com/CyberPunkLabs/cyberpunklabs.github.io/master/images/banner2.jpg');
   height: 50%;
   background-position: center;
