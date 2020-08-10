@@ -4,57 +4,124 @@
   <title>El Ágora</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/experimental.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--    <link rel="stylesheet" href="css/experimental.css" /> -->
+ 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  float: center;
+  overflow: hidden;
+  background-color: #333; 
+  width: 100%;
+}
+
+/* top-menu lists */
+.navbar li {
+  float: right;
+  width: 25%;
+}
+
+.navbar a {
+  float: none;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+/* top-menu lists */
+.subnav li {
+  float: right;
+  width: 25%;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: #4CAF50;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #4CAF50;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
 </head>
-
 <body>
 
-<!-- TOP MENU -->
-<header>
 
-  <div class="navbar">
-  <a href="#home">Home</a>
+<div class="navbar">
+  <a href="#" style="float:right">ÁGORA<br>Inicio</a>
   <div class="subnav">
-    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Cs y<br>Tecs <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#company">Company</a>
-      <a href="#team">Team</a>
-      <a href="#careers">Careers</a>
+      <a href="#">Análisis de datos</a>
+      <a href="#">Equipos de ciencia</a>
+      <a href="#">Acceso a servidores</a>
     </div>
   </div> 
   <div class="subnav">
-    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Econ<br>y RRSS <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#bring">Bring</a>
-      <a href="#deliver">Deliver</a>
-      <a href="#package">Package</a>
-      <a href="#express">Express</a>
+      <a href="#">Red de productores</a>
+      <a href="#">Medios</a>
+      <a href="#">Obras comunidad</a>
+      <a href="#">Contramercado</a>
     </div>
   </div> 
   <div class="subnav">
-    <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">Ed<br>Lib <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#link1">Link 1</a>
-      <a href="#link2">Link 2</a>
-      <a href="#link3">Link 3</a>
-      <a href="#link4">Link 4</a>
+      <a href="#">Artículos académicos</a>
+      <a href="#">Tutoriales en línea</a>
+      <a href="#">DIY</a>
+      <a href="#">Vinculos con escuelas</a>
     </div>
   </div>
-  <a href="#contact">Contact</a>
 </div>
-  
 
-<!-- <ul class="navbar">
-  <li><a href="#" class="active" style="float:right;">ÁGORA<br>[Inicio]</a></li>
-  <li><a href="#">Ed<br>Lib</a></li>
-  <li><a href="#">Econ<br>y RRSS</a></li>
-  <li><a href="#">Cs y<br>Tecs</a></li>
-</ul>
--->
-  
-</header>
+
+
 
 
 <!-- BANNER -->
@@ -90,8 +157,8 @@ camiones graneleros, ¡y mucho más!</p>
   <div align="center">
     <a href="productores/productores.html" class="my-button">Explora</a>
   </div>
-  </article>
 <br>
+  </article>
 <hr>
 
 
