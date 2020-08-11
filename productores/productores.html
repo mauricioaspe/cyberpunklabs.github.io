@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../leaflet/leaflet.css" /> 
   <script src="../leaflet/leaflet.js"></script>
+  <script src="../js/leaflet-button/L.Control.Button.js"></script>
+
 </head>
 <body>
 
@@ -29,6 +31,7 @@ var lechugaIcon = L.icon({
     iconAnchor:   [19, 0], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -10] // point from which the popup should open relative to the iconAnchor
 });
+
 
 var hortaliceres = L.layerGroup();
 var farmacias = L.layerGroup();
@@ -720,7 +723,7 @@ function onLocationFound(e) {
     var radius = e.accuracy;
 
     L.marker(e.latlng).addTo(map)
-        .bindPopup("Estás aquí").openPopup();
+        .bindPopup("<b>Bienvenido</b><br><br>Puedes inscribirte gratuitamente presionando el botón de la derecha.").openPopup();
 
     // L.circle(e.latlng, radius).addTo(map);
 }
@@ -734,6 +737,12 @@ function onLocationError(e) {
 
 map.on('locationerror', onLocationError);
 
+
+var button = new L.Control.Button('<p>¡Inscríbete aquí!</p>');
+button.addTo(map);
+button.on('click', function () {
+    window.open("https://forms.gle/o95oYceubb87i52C7","_self");
+});
 
 
 </script>
