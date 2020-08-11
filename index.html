@@ -4,20 +4,60 @@
   <title>El Ágora</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/main.css" />
-
+    <link rel="stylesheet" href="css/main.css" /> 
 </head>
 
+
+<!-- BODY -->
 <body>
 
-<!-- TOP MENU -->
+
+<!-- HEADER: NAVBAR -->
 <header>
-<ul class="top-menu">
-  <li><a href="#" class="active" style="float:right;">ÁGORA<br>[Inicio]</a></li>
-  <li><a href="#">Ed<br>Lib</a></li>
-  <li><a href="#">Econ<br>y RRSS</a></li>
-  <li><a href="#">Cs y<br>Tecs</a></li>
-</ul>
+<div class="navbar">
+
+  <div class="subnav">
+    <button class="subnavbtn">Ed<br>Lib <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#">Artículos académicos</a>
+      <a href="#">Tutoriales en línea</a>
+      <a href="#">DIY</a>
+      <a href="#">Vinculos con escuelas</a>
+    </div>
+  </div>
+
+
+  <div class="subnav">
+    <button class="subnavbtn">Econ<br>y RRSS <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#">Red de productores</a>
+      <a href="#">Medios</a>
+      <a href="#">Obras comunidad</a>
+      <a href="#">Contramercado</a>
+    </div>
+  </div> 
+
+
+  <div class="subnav">
+    <button class="subnavbtn">Cs y<br>Tecs <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#">Análisis de datos</a>
+      <a href="#">Equipos de ciencia</a>
+      <a href="#">Acceso a servidores</a>
+    </div>
+  </div> 
+
+  <div class="subnav">
+    <button class="subnavbtn">ÁGORA <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#">Inicio</a>
+      <a href="#">Acerca de...</a>
+      <a href="#">¡Únete!</a>
+    </div>
+  </div>
+
+</div>
+
 </header>
 
 
@@ -25,8 +65,8 @@
 <section>
 <div class="hero-image">
   <div class="hero-text">
-    <h2>Producción y difusión democrática</h2>
-    <button class="my-button">¡Únete!</button>
+    <p>Producción y difusión democrática</p>
+    <button>¡Únete!</button>
   </div>
 </div>
 </section>
@@ -36,65 +76,65 @@
 <section>
 <div>
 <ul class="media-menu">
-  <li><a href="#">Señal online #1</a></li>
+  <li><a href="" onclick="window.open('senalonline.html', '','width=450,height=150')">Señal online #1</a></li>
   <li><a href="#">Señal online #2</a></li>
   <li><a href="#">Medios</a></li>
 </ul>
 </div>
+
 </section>
+
 
 
 <!-- TEXT -->
 <section class="main-section">
 <h2>Destacamos</h2>
 
-<article><h3>Red de productores locales</h3>
+<h3>Red de productores locales</h3>
 <p>Accede a nuestra red geolocalizada de farmacias no coludidas, pequeños y medianos productores ganaderos y hortaliceros,
 camiones graneleros, ¡y mucho más!</p>
   <div align="center">
     <a href="productores/productores.html" class="my-button">Explora</a>
   </div>
-  </article>
+
 <br>
 <hr>
 
 
-<article><h3>Escúchanos online</h3>
+<h3>Escúchanos online</h3>
 <p>Nuestra radio tiene una de las mejores líneas editoriales de la galaxia.
-Sintoniza la <span style="color:red">Early Jazz Radio</span>, una colección de <span style="color:red;">cintas inéditas de los inicios de</span> 
-Charlie Parker, Thelonious Monk, Dizzie Gilliespie, Frank Sinatra y otros. Donada por David W. Nieven al dominio público alojado en 
-archive.org (y en nuestros servidores...).</p>
+Sintoniza la Early Jazz Radio, una colección de cintas inéditas de los inicios de Charlie Parker, Thelonious Monk, Dizzie Gilliespie, Frank Sinatra y otros. Donada por David W. Nieven al dominio público alojado en <a href="archive.org"></a> (y en nuestros servidores...).</p>
   <div align="center">
     <a href="" class="my-button"
-        onclick="window.open('senalonline.php', '','width=450,height=150')">
+        onclick="window.open('senalonline.html', '','width=450,height=150')">
         Señal online</a>
   </div>
-</article>
+
 <br>
 <hr>
 
-<article><h3>Revista Autogestionada de Ciencias y Humanidades.<br>Volumen I: Política y Evolución</h3> 
-<p>Lee la primera <span style="color:red;">Revista Autogestionada de Ciencias y Humanidades</span>, con artículos
-de alto estándar académico escritos en lenguaje de divulgación. En su primer volumen: Política y Evolución.</p>
+
+<h3>Revista Autogestionada de Ciencias y Humanidades.<br>Volumen I: Política y Evolución</h3> 
+<p>Lee la primera Revista Autogestionada de Ciencias y Humanidades, con artículos de alto estándar académico escritos en lenguaje de divulgación. En su primer volumen: Política y Evolución.</p>
   <div align="center">
     <a href="#" class="my-button">Ingresa</a>
   </div>
-</article>
+
 <br>
 <hr>
 
 
-<article><h3>Tutoriales</h3>
+<h3>Tutoriales</h3>
 <p>Aprende con nuestros tutoriales. Desde aprender a programar hasta analizar bases de datos excel.
-Además, tenemos tuitoriales sobre <span style="color:red">seguridad y auditoría de redes</span> y te mostramos cómo montar
-un servidor como este</span>.</p>
+Además, tenemos tuitoriales sobre seguridad y auditoría de redes y te mostramos cómo montar un servidor como este.</p>
   <div align="center">
     <a href="tutoriales.html" class="my-button">Revísalos</a>
   </div>
-</article>
+
 <br>
 
 </section>
+
 
 
 <!-- FOOTER -->
@@ -127,8 +167,6 @@ Diseño: <a href="#" style="color:green;">Maldito Beto - Chaka Art.</a>
 
 
 
-</body>
-</html>
 </body>
 </html>
 
