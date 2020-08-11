@@ -16,39 +16,28 @@ body {
 
 /* CODIGO PARA LA PAGINA PRINCIPAL */
 .navbar {
-  float: center;
   overflow: hidden;
   background-color: #333; 
   width: 100%;
-  /*position: fixed; 
-  height: 110px;*/
+  /* position: fixed; */
+  /* height: 110px; */
 }
-
-/*
-.navbar li {
-  float: left;
-  height: 110px;
-}
-*/
 
 .navbar a {
   float: left;
   font-size: 16px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 56px;
   text-decoration: none;
 }
 
 .subnav {
-  float: left;
+  float: right;
   overflow: hidden;
+  width: 25%;
 }
 
-/* top-menu lists */
-.subnav li {
-  float: right;
-}
 
 .subnav .subnavbtn {
   font-size: 16px;  
