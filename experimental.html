@@ -4,7 +4,7 @@
   <title>El Ágora</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/experimental.css" /> 
+    <link rel="stylesheet" href="css/main.css" /> 
 </head>
 
 
@@ -19,10 +19,10 @@
   <div class="subnav">
     <button class="subnavbtn">Ed<br>Lib <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#">Artículos académicos</a>
-      <a href="#">Tutoriales en línea</a>
-      <a href="#">DIY</a>
-      <a href="#">Vinculos con escuelas</a>
+      <a href="revista.html">Artículos académicos</a>
+      <a href="tutoriales.html">Tutoriales en línea</a>
+      <a href="https://github.com/CyberPunkLabs">DIY</a>
+      <a href="#">Vínculos con escuelas</a>
     </div>
   </div>
 
@@ -30,10 +30,10 @@
   <div class="subnav">
     <button class="subnavbtn">Econ<br>y RRSS <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#">Red de productores</a>
+      <a href="productores/productores.html">Red de productores</a>
       <a href="#">Medios</a>
       <a href="#">Obras comunidad</a>
-      <a href="#">Contramercado</a>
+      <a href="productores/productores.html">Contramercado</a>
     </div>
   </div> 
 
@@ -41,18 +41,18 @@
   <div class="subnav">
     <button class="subnavbtn">Cs y<br>Tecs <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#">Análisis de datos</a>
-      <a href="#">Equipos de ciencia</a>
-      <a href="#">Acceso a servidores</a>
+      <a href="unete.html">Análisis de datos</a>
+      <a href="https://github.com/CyberPunkLabs">Equipos de ciencia</a>
+      <a href="unete.html">Acceso a servidores</a>
     </div>
   </div> 
 
   <div class="subnav">
     <button class="subnavbtn">ÁGORA <i class="fa fa-caret-down"></i></button>
     <div class="subnav-content">
-      <a href="#">Inicio</a>
-      <a href="#">Acerca de...</a>
-      <a href="#">¡Únete!</a>
+      <a href="index.html">Inicio</a>
+      <a href="filosofia.html">Acerca de...</a>
+      <a href="unete.html">¡Únete!</a>
     </div>
   </div>
 
@@ -65,8 +65,13 @@
 <section>
 <div class="hero-image">
   <div class="hero-text">
+    <p>Ciencia y Tecnología | Economía y Redes Sociales | Educación Libertaria
     <p>Producción y difusión democrática</p>
-    <button>¡Únete!</button>
+    <p>Lee el <a href="slowscience.html" style="color:red;">Slow science manifesto</a></p>
+    <div align="center">
+      <a href="unete.html" class="my-button">ÚNETE</a>
+    </div>
+
   </div>
 </div>
 </section>
@@ -76,9 +81,9 @@
 <section>
 <div>
 <ul class="media-menu">
-  <li><a href="#">Señal online #1</a></li>
-  <li><a href="#">Señal online #2</a></li>
-  <li><a href="#">Medios</a></li>
+  <li><a href="" onclick="window.open('senalonline.html', '','width=450,height=150')">Señal online #1</a></li>
+  <li><a href="productores/productores.html">Red economía local</a></li>
+  <li><a href="#">Recursos</a></li>
 </ul>
 </div>
 
@@ -90,9 +95,8 @@
 <section class="main-section">
 <h2>Destacamos</h2>
 
-<h3>Red de productores locales</h3>
-<p>Accede a nuestra red geolocalizada de farmacias no coludidas, pequeños y medianos productores ganaderos y hortaliceros,
-camiones graneleros, ¡y mucho más!</p>
+<h3>Red de economía local</h3>
+<p>Accede a nuestra red geolocalizada de farmacias no coludidas, pequeños y medianos productores, camiones graneleros, y mucho más. ¡Inscríbete gratis!</p>
   <div align="center">
     <a href="productores/productores.html" class="my-button">Explora</a>
   </div>
@@ -102,11 +106,12 @@ camiones graneleros, ¡y mucho más!</p>
 
 
 <h3>Escúchanos online</h3>
-<p>Nuestra radio tiene una de las mejores líneas editoriales de la galaxia.
-Sintoniza la Early Jazz Radio, una colección de cintas inéditas de los inicios de Charlie Parker, Thelonious Monk, Dizzie Gilliespie, Frank Sinatra y otros. Donada por David W. Nieven al dominio público alojado en <a href="archive.org"></a> (y en nuestros servidores...).</p>
+<p>La radio con la mejor línea editorial de la galaxia: sintoniza la Early Jazz Radio, una colección de cintas inéditas de los inicios de Charlie Parker,
+  Thelonious Monk, Dizzie Gilliespie, Frank Sinatra y muchos otros. Donada por David W. Nieven al dominio público alojado en <a href="archive.org">archive.org</a>
+  (y en nuestros servidores...).</p>
   <div align="center">
     <a href="" class="my-button"
-        onclick="window.open('senalonline.php', '','width=450,height=150')">
+        onclick="window.open('senalonline.html', '','width=450,height=150')">
         Señal online</a>
   </div>
 
@@ -115,9 +120,20 @@ Sintoniza la Early Jazz Radio, una colección de cintas inéditas de los inicios
 
 
 <h3>Revista Autogestionada de Ciencias y Humanidades.<br>Volumen I: Política y Evolución</h3> 
-<p>Lee la primera Revista Autogestionada de Ciencias y Humanidades, con artículos de alto estándar académico escritos en lenguaje de divulgación. En su primer volumen: Política y Evolución.</p>
+<p>Lee la primera Revista Autogestionada de Ciencias y Humanidades, con artículos de alto estándar académico escritos en lenguaje de divulgación.
+  En su primer volumen: Política y Evolución.</p>
   <div align="center">
-    <a href="#" class="my-button">Ingresa</a>
+    <a href="revista.html" class="my-button">Ingresa</a>
+  </div>
+
+<br>
+<hr>
+
+
+<h3>Laboratorios CyberPunk</h3> 
+<p>Revisa los equipos de ciencia y economía sustentable desarrollados a bajo costo por los Laboratorios Cyberpunk.</p>
+  <div align="center">
+    <a href="https://github.com/CyberPunkLabs" class="my-button">Ingresa</a>
   </div>
 
 <br>
@@ -125,13 +141,43 @@ Sintoniza la Early Jazz Radio, una colección de cintas inéditas de los inicios
 
 
 <h3>Tutoriales</h3>
-<p>Aprende con nuestros tutoriales. Desde aprender a programar hasta analizar bases de datos excel.
-Además, tenemos tuitoriales sobre seguridad y auditoría de redes y te mostramos cómo montar un servidor como este.</p>
+<p>Aprende con nuestros tutoriales, desde migrar de Excel a Python o R hasta aprender a seguridad informática y programación.
+Además, te mostramos cómo montar un servidor como este.</p>
   <div align="center">
     <a href="tutoriales.html" class="my-button">Revísalos</a>
   </div>
 
 <br>
+<hr>
+  
+<h3>Investiga con nosotres</h3>
+  <p>¿Tienes alguna investigación en mente, que no sabes cómo desarrollar? Únetenos y te asesoramos.</p>
+    <div align="center">
+    <a href="unete.html" class="my-button">Contáctanos</a>
+  </div>
+
+<br>
+<hr>
+
+<h3>I Diccionario de Neolengua</h3>
+  <p>En nuestra Wiki estamos desarrollando el <i>I Diccionario de Neolengua</i>. Una mezcla entre <i>Tlön, Uqbar, Orbis tertius</i> y <i>1984</i>.
+    La meta es tener una lengua castellana libre de fascimo de aquí a 2025. Léelo y/o participa.</p>
+  <div align="center">
+    <a href="unete.html" class="my-button">Participa</a>
+  </div>
+  
+<br>
+<hr>
+
+<h3>Hazto tú mismx</h3>
+  <p>Revisa nuestros tutoriales DIY. Si tienes un proyecto en mente contáctanos y participa por un Arduino UNO y toda nuestra asesoría 
+    para que lo desarrolles.</p>
+  <div align="center">
+    <a href="unete.html" class="my-button">¡Escríbenos!</a>
+  </div>
+
+<br>
+
 
 </section>
 
@@ -155,7 +201,8 @@ Además, tenemos tuitoriales sobre seguridad y auditoría de redes y te mostramo
 
 <h4>¡No requiere estudios ni experiencia previa!</h4>
 <h5>Hosted by a CyberPunk Lab*</h5>
-<p>*Los servidores de los CyberPunk Labs son de propiedad de todxs quienes los utilizan.<br />Revisa nuestra <a href="filosofia.html" style="color:red"> filosofía política, sistema de propiedad comunitario y licencia Copyleft</a>.<br /><br />
+<p>*Los servidores de los CyberPunk Labs son de propiedad de todxs quienes los utilizan.<br />Revisa nuestra <a href="filosofia.html" style="color:red">
+  filosofía política, sistema de propiedad comunitario y licencia Copyleft</a>.<br /><br />
 
 
 <div class="copyright">
