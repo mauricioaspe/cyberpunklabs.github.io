@@ -5,6 +5,37 @@ html, body, #map {
     width: 100vw;
 }
 
+
+.footer-subpaginas {
+  background-image: url('../images/footer.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: -20em 0em -20em 0em;
+  margin: 5em 0em 0em 0em;
+}
+
+
+.subpaginas {
+    text-align: center;
+}
+
+.subpaginas h1 {
+    padding: 15px;
+    font-size: 24px;
+}
+
+.subpaginas p {
+    fontsize: 18px;
+}
+
+.rrss li {
+    display: inline;  
+}
+
+
 /* BODY */
 body {
     margin: 0px;
@@ -13,9 +44,8 @@ body {
     font-family: monospace;
 }
 
-
-/* CODIGO PARA LA PAGINA PRINCIPAL */
-.navbar {
+/* CODIGO PARA LAS SUB-PAGINAS */
+.navbar-secundaria {
   overflow: hidden;
   background-color: #333; 
   width: 100%;
@@ -23,9 +53,33 @@ body {
   /* height: 110px; */
 }
 
+.navbar-secundaria a {
+  float: right;
+  font-size: 14px;
+  color: white;
+  text-align: right;
+  padding: 14px 25px;
+  text-decoration: none;
+}
+
+.navbar-secundaria a:hover {
+  background-color: #4CAF50;
+}
+
+
+/* CODIGO PARA LA PAGINA PRINCIPAL */
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+  width: 100%;
+  font-size: 14px;
+  /* position: fixed; */
+  /* height: 110px; */
+}
+
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   text-align: center;
   padding: 14px 56px;
@@ -37,7 +91,6 @@ body {
   overflow: hidden;
   width: 25%;
 }
-
 
 .subnav .subnavbtn {
   font-size: 16px;  
@@ -201,5 +254,6 @@ body {
 .main-footer a {
     color: rgb(0,0,0);
 }
+
 
 
