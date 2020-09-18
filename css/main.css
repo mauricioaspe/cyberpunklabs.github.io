@@ -7,7 +7,7 @@ html, body, #map {
 
 
 .footer-subpaginas {
-  background-image: url('../images/footer.jpg');
+  background-image: url('../images/comingsoon.jpg');
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,6 +30,17 @@ html, body, #map {
 .subpaginas p {
     fontsize: 18px;
 }
+
+
+.cuerpo-subpaginas {
+    text-align: left;
+    padding: 1em 0em 0em 10em;
+    width: 75%;
+}
+
+
+}
+
 
 .rrss li {
     display: inline;  
@@ -210,7 +221,7 @@ body {
 
 
 /* MAIN SECTION */
-.main-section {
+.seccion-principal {
     padding: 0em 0em 0em 1em;
     width: 66.66%;
 }
