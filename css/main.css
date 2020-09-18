@@ -19,24 +19,45 @@ html, body, #map {
 
 
 .subpaginas {
-    text-align: center;
+    text-align: left;
+    padding: 1em 0.5em 0em 0.5em;
+    width: 75%;
+    margin: 0 auto;    
 }
 
 .subpaginas h1 {
+    text-align: center;
     padding: 15px;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .subpaginas p {
     fontsize: 18px;
+    text-align: center;
+}
+
+.redes-sociales {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
 }
 
 
-.cuerpo-subpaginas {
+.articulos {
     text-align: left;
     padding: 1em 0.5em 0em 0.5em;
     width: 75%;
     margin: 0 auto;
+    background-color: #F5ECCE;
+}
+
+.artículos h1 {
+    padding: 15px;
+    font-size: 32px;
+}
+
+.articulos p {
+    fontsize: 18px;
 }
 
 
