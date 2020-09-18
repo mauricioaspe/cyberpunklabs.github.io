@@ -13,7 +13,7 @@ html, body, #map {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: -20em 0em -20em 0em;
+  padding: 1em 0em 1em 0em;
   margin: 5em 0em 0em 0em;
 }
 
@@ -34,16 +34,9 @@ html, body, #map {
 
 .cuerpo-subpaginas {
     text-align: left;
-    padding: 1em 0em 0em 10em;
+    padding: 1em 0.5em 0em 0.5em;
     width: 75%;
-}
-
-
-}
-
-
-.rrss li {
-    display: inline;  
+    margin: 0 auto;
 }
 
 
@@ -266,5 +259,48 @@ body {
     color: rgb(0,0,0);
 }
 
+
+
+ /* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 40%;
+}
+
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Instagram */
+.fa-instagram {
+  background: #833AB4;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+} 
+
+/* Github */
+.fa-github {
+  background: #211F1F;
+  color: white;
+} 
 
 
