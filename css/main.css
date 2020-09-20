@@ -49,7 +49,7 @@ html, body, #map {
     text-align: justify;
     padding: 1em 3em 3em 0.5em;
     margin: 0 auto;
-    background-image: url("../images/pagina.jpeg");
+    background-image: url("../images/pagina5.jpeg");
     background-color: #F5ECCE;
 }
 
@@ -239,7 +239,7 @@ body {
 /* MAIN SECTION */
 .seccion-principal {
     padding: 0em 0em 0em 1em;
-    width: 66.66%;
+    width: 75%;
 }
 
 
