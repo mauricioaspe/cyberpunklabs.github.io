@@ -14,12 +14,12 @@ html, body, #map {
   background-size: cover;
   position: relative;
   padding: 1em 0em 1em 0em;
-  margin: 5em 0em 0em 0em;
+  margin: 1em 0em 0em 0em;
 }
 
 
 .subpaginas {
-    text-align: left;
+    text-align: justify;
     padding: 1em 0.5em 0em 0.5em;
     width: 80%;
     margin: 0 auto;    
@@ -44,9 +44,12 @@ html, body, #map {
 
 
 .articulos {
-    text-align: left;
-    padding: 1em 5em 5em 1em;
+    /* width: 90%; */
+    font-size: 15px;
+    text-align: justify;
+    padding: 1em 3em 3em 0.5em;
     margin: 0 auto;
+    background-image: url("../images/pagina.jpeg");
     background-color: #F5ECCE;
 }
 
