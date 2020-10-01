@@ -4,7 +4,7 @@
 <!-- ########## -->
 <!--    Head    -->
 <head>
-  <title>El Ágora</title>
+  <title>Señal online - El Ágora</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <meta http-equiv="refresh" content="900" > -->
@@ -38,7 +38,8 @@
 </figure>
 
 
-  <b>Artista:</b><br>
+<b>Artista:</b><br>
+    <?php echo $files?>
     <?php echo substr($name,0,-11)?>
 
   <script>
