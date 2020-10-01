@@ -3,33 +3,28 @@
 
 <!-- Head -->
 <head>
-<title>El Ágora</title>
+<title>Seguridad servidores - El Ágora</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="../css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 <!-- Body -->
-<body class="subpage">
+<body>
 
-<!-- Header -->
+<!-- HEADER: NAVBAR -->
 <header>
-  <div class="topnav">
-    <!-- <a href="filosofia.html">ÁGORA</a> -->
-    <nav class="topmenu">
-      <a href="../index.html">Inicio</a>
-      <!-- <a href="#">English version</a> -->
-    </nav>
+  <div class="navbar-secundaria">
+    <a href="../index.html">Ágora</a>
   </div>
 </header>
 
 
 <!-- Three -->
-<section style="font-family:monospace;font-size:16px">
-
-    <header class="align-center">
-      <h2>Tutorial de seguridad para servidor</h2>
+<section class="subpaginas">
+  <h1>Apuntes de seguridad para servidores</h1>
       <p>por <i>Diógenes</i> | versión actual: 2020-05-10</p>
       <!-- <p>Somos una red de sistemas nerviosos distribuidos alrededor del globo</p> -->
     </header>
@@ -37,105 +32,107 @@
    <hr>
 
   <h3>Índice</h3>
-  <p><a href="#ref1">Parte I:</a> Al instalar el sistema</p>
-  <p><a href="#ref2">Parte II:</a> Al iniciar el sistema</p>
-  <h4><a href="#ref3">Parte III:</a> Al conectar a internet</h4>
-      <a href="#ref3.1">1.</a> Endurecer /etc/sysctl.conf |
-      <a href="#ref3.2">2.</a> Conectar red cableada |
-      <a href="#ref3.3">3.</a> Software anti rootkits |
-      <a href="#ref3.4">4.</a> Firewall
-  <p><a href="#ref4">Parte IV:</a> Endurecer ssh</p>
+  <ul>
+    <li><a href="#ref1">Parte I:</a> Al instalar el sistema</li>
+    <li><a href="#ref2">Parte II:</a> Al iniciar el sistema</li>
+    <li><a href="#ref3">Parte III:</a> Al conectar a internet</li>
+    <ul>
+      <li><a href="#ref3.1">1.</a> Endurecer /etc/sysctl.conf</li>
+      <li><a href="#ref3.2">2.</a> Conectar red cableada</li>
+      <li><a href="#ref3.3">3.</a> Software anti rootkits</li>
+      <li><a href="#ref3.4">4.</a> Firewall</li>
+      </ul>
+    <li><a href="#ref4">Parte IV:</a> Endurecer ssh</li>
+    </ul>
   <hr>
 
-  <h4>Pre instalación</h4>
-  <p>Te sugerimos escribir los comandos, tu mismo. Copiar y pegar es simple y mejora nuestra existencia (yo lo ocupo a cada rato), pero si te dedicas a escribir los comandos,
-¡te los terminarás aprendiendo! Después escribirás de memoria y te sentirás un hacker.</p> 
-
+  <h4>Consejos</h4>
+  Acá algunos consejos
   <hr>
 
 
-  <h4><a name="ref1">## Al instalar el sistema</a></h4>
+  <h4><a name="ref1">Al instalar el sistema</a></h4>
   1. Instalar security updates<br>
   -> Si no se eligio durante la instalacion, ejecutar:</p>
-  <div class="commands">
+  <div class="comando">
     # apt install unattended-upgrades<br>
     # dpkg-reconfigure unattended-upgrades
     </div><br>
 
   2. Agregar usuarios al grupo admin y bloquear root
    -> Ver usuarios en el sistema
-  <div class="commands">
+  <div class="comando">
     # cat /etc/passwd
     </div><br>
 
   -> Ver grupos en mi sistema
-  <div class="commands">
+  <div class="comando">
     # cat /etc/group
     </div><br>
 
   -> Añadir usuario:
-  <div class="commands">
+  <div class="comando">
     # useradd nombredeusuario
     </div><br>
 
   -> Añadir usuario a grupo admin y login para verificar sudo:
-  <div class="commands">
+  <div class="comando">
     # usermod -aG sudo nombredeusuario<br>
     # su - nombredeusuario
     </div><br>
 
 
   -> Añadir usuarios (el grupo debe existir!):
-  <div class="commands">
+  <div class="comando">
     # useradd nuevousuario -g nombregrupo
      </div><br>
 
   -> Mas opciones sobre usuarios:
-  <div class="commands">
+  <div class="comando">
     # usermod
     </div><br>
 
   -> Mostrar grupo al cual pertenece un usuario:
-  <div class="commands">
+  <div class="comando">
     # groups nombredeusuario
     </div><br>
 
   -> Desactivar cuenta root<br>
   La cuenta puede bloquearse con
-  <div class="commands">
+  <div class="comando">
     # passwd -l root
     </div><br>
   
   y volver a actualizar con
-  <div class="commands">
+  <div class="comando">
     # passwd root
     </div><br>
 
   3. Limitar acceso a sudo:<br>
   Dejarlo solo para usuarios del grupo admin. Intentos fallidos quedan en:
-  <div class="commands">
+  <div class="comando">
     # var/mail/root
     </div><br>
 
 
 
-  <h4><a name="ref2">### II. Al iniciar el sistema</a></h4>
+  <h4><a name="ref2">Al iniciar el sistema</a></h4>
   1. Matar usuarios no autorizados. In a nutshell: "w" y "last".
 
   -> Elistar usuarios. Campo "WHAT" indica que procesos ha iniciado el usuario:
-  <div class="commands">
+  <div class="comando">
     # w
     </div><br>
 
   -> Bloquear cuentas sospechosas:
-  <div class="commands">
+  <div class="comando">
     # passwd -l username
     </div><br>
     
   -> Usar mismo comando para bloquear cuentas duplicadas en /etc/passwd que tengan el mismo UID (A veces usan UID=0, igual que cuenta root). Ser cuidadoso de no destruir evidencia que implique al intruso.<br>
 
   -> Mostrar ultimos login (muestras "/var/log/wtmp")
-  <div class="commands">
+  <div class="comando">
     # last
     </div><br>
 
@@ -145,7 +142,7 @@
 
 3. Mirar archivos log para ver intentos de intrusos.<br>
 -> Mirar por "fail" y "repeat" en /var/los/messages
-  <div class="commands">
+  <div class="comando">
   # cat /var/log/messages<br>
   # grep fail /var/log/messages<br>
   # grep repeat /var/log/messages<br>
@@ -154,37 +151,36 @@
 
 4. Analizar potenciales daños a archivos<br>
 -> Mirar archivos de configuracion que han sido cambiados. Reinstalarlos de inmediato:
-  <div class="commands">
+  <div class="comando">
     # debsums -ce
     </div><br>
 
   o, usando find:
-    <div class="commands">
+    <div class="comando">
       # find . -maxdepth 1 -newermt "2020-04-01"
       </div><br>
 
 5. Revisar disponibilidad y estabilidad del sistema<br>
     -> Validar operacion del hardware
-      <div class="commands">
+      <div class="comando">
 	# grep error /var/log/messages
 	</div><br>
 
 6. Deshabilitar servicios innecesarios<br>
 -> Si no se pude desenchufar:
-  <div class="commands">
+  <div class="comando">
     # ifconfig interface down
     </div><br>
 
   -> Enlistar todos los runlevels:
-    <div class="commands">
+    <div class="comando">
       # ls /etc/rc*
       </div><br>
 
     -> Ver runlevels:
-      <div class="commands">
+      <div class="comando">
 	# runlevel<br>
 	# who -r
-	</div><br>
 
 0: shutdown<br>
 1: Single user mode<br>
@@ -192,103 +188,103 @@
 3: Multiuser text based<br>
 4: Multiuser with X server (BDS)<br>
 5. Multiuser with X server (SUSE, Debian)<br>
-6. Reboot<br>
-
+6. Reboot
+      </div><br>
 
       -> Cambiar:
-        <div class="commands">
+        <div class="comando">
 	  # init newrunlevel
 	  </div><br>
 
 	-> Ver el por defecto:
-  <div class="commands">
+  <div class="comando">
     # systemctl get-default
     </div><br>
 
 -> Ver todos los cargados:
-  <div class="commands">
+  <div class="comando">
     # systemctl list-units --type target --all
     </div>
 
 -> Dejar runlevel 3 por defecto:
-  <div class="commands">
+  <div class="comando">
   # systemctl set-dafault runlevel3.target
 </div><br>
 
 -> MIrar cambios en apt:
-  <div class="commands">
+  <div class="comando">
   # cat /var/log/apt/history.log
 </div><br>
 
   
-  <h4><a href name="ref3">## III. Conectar a internet</a></h4>
+  <h4><a href name="ref3">Conectar a internet</a></h4>
   <a name="ref3.1">1. Endurecer /etc/sysctl.conf.</a> Descomentar segun ejemplo y añadir lineas:<br>
   -> Proteger de "icmp echo" y requerimientos multicast
-  <div class="commands">
+  <div class="comando">
     # net.ipv4.icmp_echo_ignore_broadcasts = 1
     </div><br>
 
 -> Despues de descomentar all.accept_source_route:
-  <div class="commands">
+  <div class="comando">
   # net.ipv4.conf.default.accept_source_route=0<br>
   # net.ipv6.conf.default.accept_source_route=0<br>
   </div><br>
   
 -> Despues de descomentar "syncookies" para bloquear ataques SYN:
-  <div class="commands">
+  <div class="comando">
   # net.ipv4.tcp_max_syn_backlog=2048<br>
 # net.ipv4.tcp_synack_retries=2<br>
   # net.ipv4.tcp_syn_retries=5<br>
   </div><br>
 
 -> Luego de descomentar martians:
-  <div class="commands">
+  <div class="comando">
     # net.ipv4.icmp_ignore_bogus_error_responses=1
     </div><br>
 
 -> Bannear requerimientos ping:
-  <div class="commands">
+  <div class="comando">
     # net.ipv4.icmp_echo_ignore_all=1
     </div><br>
 
   -> Aceptar cambios
-    <div class="commands">
+    <div class="comando">
       # sysctl -p
       </div><br>
 
     -> Añadirlos permanentemente:
-      <div class="commands">
+      <div class="comando">
 	# sysctl -p /etc/sysctl.conf
 	</div><br>
 
 <a name="ref3.2">2. Conectar red cableada</a><br>
 -> Archivo de configuracion en:
-  <div class="commands">
+  <div class="comando">
     # /etc/network/interfaces
     </div><br>
 
 -> Ver dispositivos
-  <div class="commands">
+  <div class="comando">
     # ip addr
     </div><br>
 
 -> Levantar interface:
-  <div class="commands">
+  <div class="comando">
     # ip link set eth0 up
     </div><br>
 
 -> Reiniciar
-  <div class="commands">
+  <div class="comando">
     # systemctl restart networking
     </div><br>
 
   -> Ver estado
-    <div class="commands">
+    <div class="comando">
       # systemctl status networking.service
       </div><br>
 
 -> Configuracion simple de /etc/network/interfaces:
-  <div class="commands">
+  <div class="comando">
     # man interfaces<br>
 # auto eth0<br>
 # allow-hotplug eth0<br>
@@ -297,7 +293,7 @@
 
   <h4><a name="ref3.3">3. Antivirus (requiere paquetes para archivos comprimidos) y software para rootkits:</a></h4>
 En Linux también hay virus, pero también los mejores antivirus.
-    <div class="commands">
+    <div class="comando">
 # apt install clamav clamav-daemon clamav-docs<br>
 # apt install arc arj bzip2 cabextract lzop nomarch p7zip pax tnef unrar-free unzip zoo<br><br>
 # apt install chkrootkit rkhunter<br>
@@ -308,7 +304,7 @@ En Linux también hay virus, pero también los mejores antivirus.
 </div><br>
 
     <a name="ref3.4">4. Firewall</a>
-      <div class="commands">
+      <div class="comando">
 # ufw enable<br>
 # ufw status verbose<br>
 # ufw status numbered<br>
@@ -316,40 +312,39 @@ En Linux también hay virus, pero también los mejores antivirus.
 </div><br>
 
 
-<h3><a name="ref4">IV. Endurecer ssh</a></h3>
+<h3><a name="ref4">Endurecer ssh</a></h3>
 
-<h3><a name="ref5">V Listar discos</a></h3>
+<h3><a name="ref5">Listar discos</a></h3>
 <div class="comando">
-lscpu
+# lscpu
 </div>
 
   
 </section>
 
 
-
-<!-- Main footer -->
+<!-- FOOTER -->
 <footer class="main-footer">
 <div align="center">
   <hr>
-  <h3>Contáctanos en <br>
-  <a href="mailto:cyberpunklabs@protonmail.com", style="color:red;">este correo</a></h3>
+  <h3>Contáctanos en<br>
+  <a href="mailto:agora@protonmail.com" style="color:red;">este correo</a></h3>
 
-<div>
-  <ul marker-style="none">
-    <li><a href="#" style="color:blue;">Twitter</a></li>
-    <li><a href="#" style="color:blue;">Facebook</a></li>
-    <li><a href="#" style="color:blue;">Instagram</a></li>
-  </ul>
-</div>
+
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-instagram"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/CyberPunkLabs" class="fa fa-github"></a>
+
 
 
 <h4>¡No requiere estudios ni experiencia previa!</h4>
-<p>Los servidores de los CyberPunk Labs son de propiedad de todxs quienes los utilizan.<br />Revisa nuestra <a href="filosofia.html" style="color:red"> filosofía política, sistema de propiedad comunitario y licencia Copyleft</a>.<br /><br />
+<h5>Hosted by a CyberPunk Lab*</h5>
+<p>*Los servidores de los CyberPunk Labs son de propiedad de todxs quienes los utilizan.<br />Revisa nuestra <a href="filosofia.html" style="color:red"> filosofía política, sistema de propiedad comunitario y licencia Copyleft</a>.<br /><br />
 
 
 <div class="copyright">
-Diseño: <a href="#" style="color:green;">Maldito Beto - Chaka Art.</a> 
+Diseño: <a href="unete.html" style="color:green;">Maldito Beto - Chaka Art.</a> 
 </div>
 
 </div>
