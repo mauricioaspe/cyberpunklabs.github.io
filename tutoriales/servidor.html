@@ -46,20 +46,20 @@
     </ul>
   <hr>
 
-  <h4>Consejos</h4>
+  <h3>Consejos</h3>
   Acá algunos consejos
   <hr>
 
 
-  <h4><a name="ref1">Al instalar el sistema</a></h4>
-  1. Instalar security updates<br>
+  <h3><a name="ref1">Al instalar el sistema</a></h3>
+  <h4>1. Instalar security updates</h4>
   -> Si no se eligio durante la instalacion, ejecutar:</p>
   <div class="comando">
     # apt install unattended-upgrades<br>
     # dpkg-reconfigure unattended-upgrades
     </div><br>
 
-  2. Agregar usuarios al grupo admin y bloquear root
+  <h4>2. Agregar usuarios al grupo admin y bloquear root</h4>
    -> Ver usuarios en el sistema
   <div class="comando">
     # cat /etc/passwd
@@ -108,7 +108,7 @@
     # passwd root
     </div><br>
 
-  3. Limitar acceso a sudo:<br>
+  <h4>3. Limitar acceso a sudo:</h4>
   Dejarlo solo para usuarios del grupo admin. Intentos fallidos quedan en:
   <div class="comando">
     # var/mail/root
@@ -116,8 +116,9 @@
 
 
 
-  <h4><a name="ref2">Al iniciar el sistema</a></h4>
-  1. Matar usuarios no autorizados. In a nutshell: "w" y "last".
+  <h3><a name="ref2">Al iniciar el sistema</a></h3>
+  <h4>Matar usuarios no autorizados.</h4>
+  In a nutshell: "w" y "last".
 
   -> Elistar usuarios. Campo "WHAT" indica que procesos ha iniciado el usuario:
   <div class="comando">
@@ -137,10 +138,10 @@
     </div><br>
 
 
-2. Identificar y matar procesos no autorizados<br>
+   <h4>Identificar y matar procesos no autorizados</h4>
 
 
-3. Mirar archivos log para ver intentos de intrusos.<br>
+   <h4>Mirar archivos log para ver intentos de intrusos.</h4>
 -> Mirar por "fail" y "repeat" en /var/los/messages
   <div class="comando">
   # cat /var/log/messages<br>
@@ -149,7 +150,7 @@
   </div><br>
 
 
-4. Analizar potenciales daños a archivos<br>
+<h4>Analizar potenciales daños a archivos</h4>
 -> Mirar archivos de configuracion que han sido cambiados. Reinstalarlos de inmediato:
   <div class="comando">
     # debsums -ce
@@ -160,13 +161,13 @@
       # find . -maxdepth 1 -newermt "2020-04-01"
       </div><br>
 
-5. Revisar disponibilidad y estabilidad del sistema<br>
+<h4>Revisar disponibilidad y estabilidad del sistema</h4>
     -> Validar operacion del hardware
       <div class="comando">
 	# grep error /var/log/messages
 	</div><br>
 
-6. Deshabilitar servicios innecesarios<br>
+<h4>Deshabilitar servicios innecesarios</h4>
 -> Si no se pude desenchufar:
   <div class="comando">
     # ifconfig interface down
@@ -211,14 +212,14 @@
   # systemctl set-dafault runlevel3.target
 </div><br>
 
--> MIrar cambios en apt:
+-> Mirar cambios en apt:
   <div class="comando">
   # cat /var/log/apt/history.log
 </div><br>
 
   
-  <h4><a href name="ref3">Conectar a internet</a></h4>
-  <a name="ref3.1">1. Endurecer /etc/sysctl.conf.</a> Descomentar segun ejemplo y añadir lineas:<br>
+  <h3><a href name="ref3">Conectar a internet</a></h3>
+  <h4><a name="ref3.1">1. Endurecer /etc/sysctl.conf.</a> Descomentar segun ejemplo y añadir lineas:</h4>
   -> Proteger de "icmp echo" y requerimientos multicast
   <div class="comando">
     # net.ipv4.icmp_echo_ignore_broadcasts = 1
@@ -257,7 +258,7 @@
 	# sysctl -p /etc/sysctl.conf
 	</div><br>
 
-<a name="ref3.2">2. Conectar red cableada</a><br>
+<h4><a name="ref3.2">2. Conectar red cableada</a></h4>
 -> Archivo de configuracion en:
   <div class="comando">
     # /etc/network/interfaces
@@ -291,7 +292,7 @@
     # iface eth0 inet dhcp
     </div><br>
 
-  <h4><a name="ref3.3">3. Antivirus (requiere paquetes para archivos comprimidos) y software para rootkits:</a></h4>
+  <h4><a name="ref3.3">Antivirus (requiere paquetes para archivos comprimidos) y software para rootkits:</a></h4>
 En Linux también hay virus, pero también los mejores antivirus.
     <div class="comando">
 # apt install clamav clamav-daemon clamav-docs<br>
@@ -303,7 +304,7 @@ En Linux también hay virus, pero también los mejores antivirus.
 # rkhunter --check
 </div><br>
 
-    <a name="ref3.4">4. Firewall</a>
+  <h4><a name="ref3.4">4. Firewall</a></h4>
       <div class="comando">
 # ufw enable<br>
 # ufw status verbose<br>
@@ -317,7 +318,7 @@ En Linux también hay virus, pero también los mejores antivirus.
 <h3><a name="ref5">Listar discos</a></h3>
 <div class="comando">
 # lscpu
-</div>
+</div><br><br>
 
   
 </section>
@@ -340,7 +341,7 @@ En Linux también hay virus, pero también los mejores antivirus.
 
 <h4>¡No requiere estudios ni experiencia previa!</h4>
 <h5>Hosted by a CyberPunk Lab*</h5>
-<p>*Los servidores de los CyberPunk Labs son de propiedad de todxs quienes los utilizan.<br />Revisa nuestra <a href="filosofia.html" style="color:red"> filosofía política, sistema de propiedad comunitario y licencia Copyleft</a>.<br /><br />
+<p>*Los servidores de los CyberPunk Labs son de propiedad de todxs quienes los utilizan.<br />Revisa nuestra <a href="../filosofia.html" style="color:red"> filosofía política, sistema de propiedad comunitario y licencia Copyleft</a>.<br /><br />
 
 
 <div class="copyright">
